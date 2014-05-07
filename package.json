@@ -1,0 +1,39 @@
+{
+    "name": "static-on-rails",
+    "description": "A framework to build static apps.",
+    "main": "./lib/static",
+    "author": "Chiyan Chen",
+    "version": "0.0.4",
+    "repository" : {
+        "type" : "git",
+        "url" : "https://github.com/redblaze/static-on-rails.git"
+    },
+    "bugs" : {
+        "url" : "https://github.com/redblaze/static-on-rails/issues"
+    },
+    "licenses" : [
+        {
+            "type" : "MIT",
+            "url" : "https://github.com/redblaze/static-on-rails/raw/master/LICENSE"
+        }
+    ],
+    "jam": {
+        "main": "lib/main.js",
+        "include": [
+            "lib/main.js",
+            "README.md",
+            "LICENSE"
+        ]
+    },
+    "bin": {
+        "static": "./bin/static.js"
+    },
+    "dependencies": {
+        "cps": "*",
+        "better-js-class": "*",
+        "underscore": "*",
+        "jsdom": "*",
+        "yuglify": "*",
+        "fs-extra": "*"
+    }
+}
