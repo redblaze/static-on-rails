@@ -26,7 +26,8 @@
         ]
     },
     "bin": {
-        "static": "./bin/static.js"
+        "static_generate": "./bin/static_generate.js",
+        "static_build": "./bin/static_build.js"
     },
     "dependencies": {
         "cps": "*",

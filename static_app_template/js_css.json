@@ -1,0 +1,12 @@
+{
+    "js": {
+        "example": [
+            "/js/example/example.js"
+        ]
+    },
+    "css": {
+        "example": [
+            "/css/example.css"
+        ]
+    }
+}
