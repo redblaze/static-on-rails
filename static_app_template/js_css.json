@@ -1,5 +1,9 @@
 {
     "js": {
+        "shared": [
+            "/js/env.js",
+            "/js/properties.js"
+        ],
         "example": [
             "/js/example/example.js"
         ]

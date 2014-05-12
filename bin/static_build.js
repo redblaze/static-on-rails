@@ -1,6 +1,8 @@
+Error.stackTraceLimit = Infinity;
+
+var rootPath = process.cwd();
 
 var path = require('path');
-var rootPath = path.dirname(require.main.filename);
 
 var Compiler = require('../lib/compiler.js');
 

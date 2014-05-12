@@ -1,8 +1,7 @@
-$.ajaxSetup({
-    cache: false
-});
-
 var __m__ = function($, dom, cb) {
+    dom.setEnv(__properties__[__env__]);
+    dom.setJQuery($);
+
     cps.seq([
         function(_, cb) {
             dom.loadJSCSS(cb);
@@ -18,6 +17,9 @@ var __m__ = function($, dom, cb) {
             cb();
         },
         function(_, cb) {
+            dom.addScript('shared', cb);
+        },
+        function(_, cb) {
             dom.addScript('example', cb);
         },
         function(_, cb) {
@@ -25,6 +27,5 @@ var __m__ = function($, dom, cb) {
         }
     ], cb);
 };
-
 
 __m__;

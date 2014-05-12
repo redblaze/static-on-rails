@@ -11,12 +11,16 @@
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/0.10.0/lodash.min.js"></script>
 <script class="compiler exclude" type="text/javascript" src="/js/lib/dom.js"></script>
-<script class="compiler" type="text/javascript" src="/js/lib/cps.js"></script>
+<script class="compiler exclude" type="text/javascript" src="/js/lib/cps.js"></script>
 <script class="compiler" type="text/javascript" src="/js/env.js"></script>
 <script class="compiler" type="text/javascript" src="/js/properties.js"></script>
 <script class="compiler" type="text/javascript" src="/app/example/example.js"></script>
 
 <script class="compiler">
+    $.ajaxSetup({
+        cache: false
+    });
+
     var cb = function(err, res) {
         if (err) {
             throw err;

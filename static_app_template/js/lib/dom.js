@@ -103,6 +103,14 @@ var __dom__ = function() {
                     cb(e);
                 }
             });
+        },
+
+        setEnv: function() {
+
+        },
+
+        setJQuery: function() {
+
         }
     };
 
