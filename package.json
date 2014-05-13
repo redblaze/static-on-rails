@@ -3,7 +3,7 @@
     "description": "A framework to build static apps.",
     "main": "./lib/static",
     "author": "Chiyan Chen",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "repository" : {
         "type" : "git",
         "url" : "https://github.com/redblaze/static-on-rails.git"
@@ -26,8 +26,8 @@
         ]
     },
     "bin": {
-        "static_generate": "./bin/static_init.js",
-        "static_build": "./bin/static_build.js"
+        "static-init": "./bin/static_init.js",
+        "static-build": "./bin/static_build.js"
     },
     "dependencies": {
         "cps": "*",

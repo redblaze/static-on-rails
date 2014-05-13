@@ -1,6 +1,5 @@
 
 Error.stackTraceLimit = Infinity;
-var rootPath = process.cwd();
 
 var cps = require('cps');
 var fs = require('fs-extra');
