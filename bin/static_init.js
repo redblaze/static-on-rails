@@ -1,13 +1,9 @@
-
+#!/usr/bin/env node
 Error.stackTraceLimit = Infinity;
-
-var cps = require('cps');
-var fs = require('fs-extra');
-
 var path = require('path');
 var currentDir = path.dirname(require.main.filename);
-
-var util = require('../lib/util.js');
+var rootDir = process.cwd();
+var fs = require('fs-extra');
 
 var cb = function(err, res) {
     if (err) {
@@ -20,7 +16,9 @@ var cb = function(err, res) {
     }
 };
 
-util.runCmd('cp', ['-r', currentDir + '/../static_app_template/*', '.'], cb);
+var src = path.join(currentDir, '..', 'static_app_template');
+var dst = rootDir;
+fs.copy(src, dst, cb);
 
 
 

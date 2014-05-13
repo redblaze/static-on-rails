@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 Error.stackTraceLimit = Infinity;
 
 var rootPath = process.cwd();
