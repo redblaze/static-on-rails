@@ -2,7 +2,6 @@ Error.stackTraceLimit = Infinity;
 
 var rootPath = process.cwd();
 
-var path = require('path');
 
 var Compiler = require('../lib/compiler.js');
 
