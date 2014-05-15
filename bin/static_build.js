@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 
 Error.stackTraceLimit = Infinity;
+var fs = require('fs-extra');
+var cps = require('cps');
 
 var rootPath = process.cwd();
 
@@ -20,9 +22,20 @@ var cb = function(err, res) {
 };
 
 
-var cfg = {
-    rootPath: rootPath
-};
+cps.seq([
+    function(_, cb) {
+        var path = rootPath + '/config.json';
+        fs.readFile(path, cb);
+    },
+    function(_, cb) {
+        var cfg = JSON.parse(_);
+        var cfg = {
+            rootPath: rootPath,
+            jqueryPath: cfg['jquery-path']
+        };
 
-var compiler = new Compiler(cfg);
-compiler.run(cb);
+        var compiler = new Compiler(cfg);
+        compiler.run(cb);
+    }
+], cb);
+
