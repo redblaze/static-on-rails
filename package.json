@@ -35,6 +35,7 @@
         "underscore": "*",
         "jsdom": "*",
         "yuglify": "*",
-        "fs-extra": "*"
+        "fs-extra": "*",
+        "request": "*"
     }
 }

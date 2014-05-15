@@ -20,6 +20,13 @@ var __m__ = function($, dom, cb) {
             dom.addScript('shared', cb);
         },
         function(_, cb) {
+            dom.loadJSON('/json/example.json', cb);
+        },
+        function(json, cb) {
+            $('#body').append('<div>' + JSON.stringify(json) + '</div>');
+            cb();
+        },
+        function(_, cb) {
             dom.addScript('example', cb);
         },
         function(_, cb) {

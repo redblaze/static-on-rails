@@ -105,6 +105,12 @@ var __dom__ = function() {
             });
         },
 
+        loadJSON: function(url, cb) {
+            $.getJSON(url, function(o) {
+                cb(null, o);
+            });
+        },
+
         setEnv: function() {
 
         },
