@@ -37,21 +37,32 @@ var __dom__ = function() {
 
     Dom.prototype = {
         _processLinks: function (node) {
-            _.each(node.find('a[data-link-type="static"]'), function () {
+            var me = this;
+
+            node.find('a[data-link-type="static"]').each(function () {
+                console.log('process static link');
                 var nd = $(this);
                 var name = nd.data('app-name');
                 var rest = nd.data('link-rest');
-                var href = this._getHrefPrefix(name) + (rest || '');
-
+                var href = me._getHrefPrefix(name) + (rest || '');
+                console.log(href);
                 nd.attr('href', href);
+            });
+
+            node.find('a[data-link-type="dynamic"]').each(function() {
+                var nd = $(this);
+                var href = nd.attr('href');
+                var host = __properties__[__env__]['dynamic-host'];
+
+                nd.attr('href', host + href);
             });
         },
 
         _getHrefPrefix: function (name) {
-            if (this._env == 'dev') {
-                return '/app/' + appName + '/' + appName + '.html';
+            if (__env__ == 'dev') {
+                return '/app/' + name + '/' + name + '.html';
             } else {
-                return '/name/';
+                return '/' + name + '/';
             }
         },
 
@@ -64,7 +75,7 @@ var __dom__ = function() {
                 if (status == "error") {
                     cb(response);
                 } else {
-                    me._processLinks($, node);
+                    me._processLinks(node);
                     // var htmlText = node.find(cssSelector).html();
                     var htmlText = node.find(cssSelector)[0].outerHTML;
                     node.remove();
