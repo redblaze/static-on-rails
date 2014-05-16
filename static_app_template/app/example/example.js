@@ -13,9 +13,7 @@ var __m__ = function($, dom, cb) {
             dom.loadHTML('/html/foobar.html', '#foobar', cb)
         },
         function(o, cb) {
-            console.log(o);
             $('#body').append($(o));
-            console.log($('html').html());
             cb();
         },
         function(_, cb) {
@@ -32,7 +30,6 @@ var __m__ = function($, dom, cb) {
             dom.addScript('example', cb);
         },
         function(_, cb) {
-            console.log($('html').html());
             cb(null, $('html').html());
         }
     ], cb);
