@@ -2,10 +2,14 @@
 
 A feather weight tool to build static applications:
 
-* Feather-weight self-contained framework for building purely static application.
-* No yet-another templating system for Javascript.  Page view construction is via standard DOM manipulating in Javascript (powered by the jsdom).
+* Feather-weight self-contained framework for building purely static
+  application.
+* No yet-another templating system for Javascript.  Page view
+  construction is via standard DOM manipulating in Javascript (powered
+  by the jsdom).
   * Full support to reusable partial page views.
-* Simple and easy-to-use development environment that does not require any build process or server restart through out coding practice.
+* Simple and easy-to-use development environment that does not require
+  any build process or server restart through out coding practice.
 * Turn key solution for building deployment package
   * JS/CSS compression is handled transparently (powered by yuglify).
 
@@ -22,7 +26,9 @@ There are two commands:
 
 ### static-init
 
-static-init helps to generate a scaffold static application, which servers as both an example and a basis for further development.  To use:
+static-init helps to generate a scaffold static application, which
+servers as both an example and a basis for further development.  To
+use:
 
 ```text
 > mkdir app-name
@@ -127,8 +133,8 @@ To write a static application named "bar":
 
 * Create a directory under the "app" directory and name is "bar".
 * Create two files under "bar" directory
-  ** "bar.html"
-  ** "bar.js"
+  * "bar.html"
+  * "bar.js"
 
 ### app-name.html
 
@@ -179,7 +185,7 @@ The key customizable in this html is the inclusion of the application js file:
 
 ### app-name.js
 
-"bar.js" hosts the templating code to construct the application page.  Here is an example:
+"bar.js" hosts the code to construct the application page.  Here is an example:
 
 ```js
 var __m__ = function($, dom, cb) {
