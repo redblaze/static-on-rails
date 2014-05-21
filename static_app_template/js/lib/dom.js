@@ -40,12 +40,10 @@ var __dom__ = function() {
             var me = this;
 
             node.find('a[data-link-type="static"]').each(function () {
-                console.log('process static link');
                 var nd = $(this);
                 var name = nd.data('app-name');
                 var rest = nd.data('link-rest');
                 var href = me._getHrefPrefix(name) + (rest || '');
-                console.log(href);
                 nd.attr('href', href);
             });
 
@@ -128,6 +126,32 @@ var __dom__ = function() {
 
         setJQuery: function() {
 
+        },
+
+        page: function(conf, cb) {
+            var me = this;
+
+            cps.seq([
+                function(_, cb) {
+                    me.loadJSCSS(cb);
+                },
+                function(_, cb) {
+                    cps.peach(conf['css'], function(name, cb) {
+                        me.addStyle(name, cb);
+                    }, cb);
+                },
+                function(_, cb) {
+                    cps.seq(conf['templating'], cb);
+                },
+                function(_, cb) {
+                    cps.peach(conf['js'], function(name, cb) {
+                        me.addScript(name, cb);
+                    }, cb);
+                },
+                function(_, cb) {
+                    cb(null, $('html').html());
+                }
+            ], cb);
         }
     };
 
