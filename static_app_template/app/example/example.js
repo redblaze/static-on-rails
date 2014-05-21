@@ -4,7 +4,7 @@ var __m__ = function($, dom, cb) {
         jquery: $,
         css: ['example'],
         js: ['shared', 'example'],
-        templating: [
+        html: [
             function(_, cb) {
                 dom.loadHTML('/html/foobar.html', '#foobar', cb)
             },

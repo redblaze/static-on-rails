@@ -194,7 +194,7 @@ var __m__ = function($, dom, cb) {
         jquery: $,
         css: ['example'],
         js: ['shared', 'example'],
-        templating: [
+        html: [
             function(_, cb) {
                 dom.loadHTML('/html/foobar.html', '#foobar', cb)
             },
@@ -231,7 +231,7 @@ var __m__ = function($, dom, cb) {
         jquery: $,
         css: [/* list of your css packages */], 
         js: [/* list of your js packages */], 
-        templating: [
+        html: [
 	    /*
 	    This is where you template your page using the partial html templates.
 	    */
@@ -290,7 +290,7 @@ jquery: $
   file.  Each js package will be merged to one file and minified at
   build time to be included in the release/deployment package.
 
-* templating: A list of cps-style procedures to construct the html
+* html: A list of cps-style procedures to construct the html
   structure of the page.  Note that "loadHTML" and "loadJSON" function
   should be used here.
 

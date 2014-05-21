@@ -84,16 +84,26 @@ var __dom__ = function() {
 
         addScript: function (name, cb) {
             var paths = this._jscss['js'][name];
-            addScripts(paths, 0, cb);
+            if (paths == null) {
+                console.log('no js package: ' + name);
+                cb();
+            } else {
+                addScripts(paths, 0, cb);
+            }
         },
 
         addStyle: function(name, cb) {
             var paths = this._jscss['css'][name];
-            for (var i = 0; i < paths.length; i++) {
-                var path = paths[i];
-                $('head').append($('<link rel="stylesheet" href="' + path + '"/>'));
+            if (paths == null) {
+                console.log('no css package: ' + name);
+                cb();
+            } else {
+                for (var i = 0; i < paths.length; i++) {
+                    var path = paths[i];
+                    $('head').append($('<link rel="stylesheet" href="' + path + '"/>'));
+                }
+                cb();
             }
-            cb();
         },
 
         loadJSCSS: function (cb) {
@@ -136,15 +146,15 @@ var __dom__ = function() {
                     me.loadJSCSS(cb);
                 },
                 function(_, cb) {
-                    cps.peach(conf['css'], function(name, cb) {
+                    cps.peach(conf['css'] || [], function(name, cb) {
                         me.addStyle(name, cb);
                     }, cb);
                 },
                 function(_, cb) {
-                    cps.seq(conf['templating'], cb);
+                    cps.seq(conf['html'] || [], cb);
                 },
                 function(_, cb) {
-                    cps.peach(conf['js'], function(name, cb) {
+                    cps.peach(conf['js'] || [], function(name, cb) {
                         me.addScript(name, cb);
                     }, cb);
                 },
