@@ -225,9 +225,9 @@ var __m__ = function($, dom, cb) {
         Environment setup.  This is a framework convention which must be retained.
         */
         env: __properties__[__env__],  
-	/*
- 	JQuery object setup.  This is a framework convention which must be retained. 
-	*/
+        /*
+        JQuery object setup.  This is a framework convention which must be retained. 
+        */
         jquery: $,
         css: [/* list of your css packages */], 
         js: [/* list of your js packages */], 
@@ -272,17 +272,13 @@ This function "page" is the top level function that constructs a static applicat
 The conf object has the following fields:
 
 * env: This is a required field by the framework convention.  Please always set the value:
-
 ```text
 __properties__[__env__]
 ```
-
 * jquery: This is a required field by the framework convention.  Please always set the value:
-
 ```text
 $
 ```
-
 which is passed in to the function scope of "__m__".
 
 * css: A list of all css packages that are to be included in the page.
