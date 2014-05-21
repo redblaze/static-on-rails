@@ -271,15 +271,14 @@ configurations in JSON format.
 This function "page" is the top level function that constructs a static application. 
 The conf object has the following fields:
 
-* env: This is a required field by the framework convention.  Please always set the value:
+* env: This is a required field by the framework convention.  Please always use the following setup:
 ```text
-__properties__[__env__]
+env: __properties__[__env__]
 ```
-* jquery: This is a required field by the framework convention.  Please always set the value:
+* jquery: This is a required field by the framework convention.  Please always use the following setup:
 ```text
-$
+jquery: $
 ```
-which is passed in to the function scope of "__m__".
 
 * css: A list of all css packages that are to be included in the page.
   A css package is mapped to a list of css files in the "js_css.json"
