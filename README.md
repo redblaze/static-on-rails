@@ -9,7 +9,7 @@ A feather weight tool to build static applications:
   by the jsdom).
   * Full support to reusable partial page views.
 * Simple and easy-to-use development environment that does not require
-  any build process or server restart through out coding practice.
+  any build process or server restart throughout coding practice.
 * Turn key solution for building deployment package
   * JS/CSS compression is handled transparently (powered by yuglify).
 
