@@ -37,14 +37,16 @@ use:
 ```
 
 After running these commands you will have a directory "app-name" will
-an example application in it.  An typical example of static-on-rails
-project has the following structure:
+an example application in it.  An static-on-rails application has the
+following structure:
 
 * app
 * js
 * css
 * html
 * json
+* images
+* fonts
 * js_css.json
 * config.json
 
@@ -66,7 +68,7 @@ To view the page:
 http://localhost/app/page-name/page-name.html
 ```
 
-##### assets: js, css, html, json
+##### assets: js, css, html, json, images, fonts
 
 The directories js, css, html and json are places to store the assets.
 The names of these directories are self-explaining.
