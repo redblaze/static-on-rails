@@ -105,13 +105,13 @@ minified to one single file.
 
 ##### config.json
 
-The file config.json contains a list of global configurations for the
-building the project to a deployment package.  At the current version,
-there is only one config entry for the jquery lib path.
+The file config.json contains a list of global configurations for
+building the project to a deployment package.
 
 ```json
 {
-    "jquery-path": "/js/lib/jquery-1.8.3.min.js"
+    "jquery-path": "/js/lib/jquery-1.8.3.min.js",  /* mandatory, jquery path */
+    "excluded-apps": "example" /* optional, list of apps to exclude from the build */
 }
 ```
 
