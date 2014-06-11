@@ -1,3 +1,4 @@
 {
-    "jquery-path": "/js/lib/jquery-1.8.3.min.js"
+    "jquery-path": "/js/lib/jquery-1.8.3.min.js",
+    "excluded-apps": ["example"]
 }

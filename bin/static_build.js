@@ -31,7 +31,8 @@ cps.seq([
         var cfg = JSON.parse(_);
         var cfg = {
             rootPath: rootPath,
-            jqueryPath: cfg['jquery-path']
+            jqueryPath: cfg['jquery-path'],
+            excludedApps: cfg['excluded-apps']
         };
 
         var compiler = new Compiler(cfg);
