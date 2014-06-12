@@ -111,7 +111,8 @@ building the project to a deployment package.
 ```json
 {
     "jquery-path": "/js/lib/jquery-1.8.3.min.js",  /* mandatory, jquery path */
-    "excluded-apps": "example" /* optional, list of apps to exclude from the build */
+    "excluded-apps": "example", /* optional, list of apps to exclude from the build */
+    "minify": false /* optional, default true, whether the css and js should be minified, useful for debugging */
 }
 ```
 

@@ -32,7 +32,8 @@ cps.seq([
         var cfg = {
             rootPath: rootPath,
             jqueryPath: cfg['jquery-path'],
-            excludedApps: cfg['excluded-apps'] || []
+            excludedApps: cfg['excluded-apps'] || [],
+            minify: cfg['minify'] == null? true : cfg['minify']
         };
 
         var compiler = new Compiler(cfg);
