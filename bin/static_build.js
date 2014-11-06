@@ -16,6 +16,7 @@ var cb = function(err, res) {
         if (err.stack) {
             console.log('STACK:', err.stack);
         }
+        process.exit(1);
     } else {
         console.log('OK:', res);
     }
